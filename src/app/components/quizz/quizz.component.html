@@ -4,11 +4,11 @@
         <h3> {{ title }}</h3> 
     </div>
 
-    <div class="quizz_questions">
+    <div class="quizz_questions" *ngIf="!gameFinished">
         <h3> {{ questionSelected.question }}</h3>
     </div>
 
-    <div class="quizz_options">
+    <div class="quizz_options" *ngIf="!gameFinished">
         <button 
         class="btn-option"
         (click) ="playerChoose(option.alias)"
@@ -17,8 +17,8 @@
         </button>
     </div>
 
-    <div class="quizz_results">
+    <div class="quizz_results" *ngIf="gameFinished">
         <h1>Resultado: </h1>
-        <p>Resposta selecionada</p>
+        <p>{{ answersSelected }}</p>
     </div>
 </div>
