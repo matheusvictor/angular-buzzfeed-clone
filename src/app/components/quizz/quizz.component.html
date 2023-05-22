@@ -11,6 +11,7 @@
     <div class="quizz_options">
         <button 
         class="btn-option"
+        (click) ="playerChoose(option.alias)"
         *ngFor="let option of questionSelected.options">
             {{ option.name }}
         </button>
